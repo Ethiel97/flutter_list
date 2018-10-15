@@ -14,7 +14,7 @@ class MyCounterApp extends StatelessWidget {
     // TODO: implement build
 
     return new MaterialApp(
-      title: "Couter App",
+      title: "List app",
       theme: new ThemeData(primaryColor: Colors.green.shade800),
       home: MyCounter(),
     );
@@ -39,11 +39,11 @@ class _MyCounterState extends State<MyCounter> {
     _loadData();
   }
 
-  void increment() {
-    setState(() {
-      _counter++;
-    });
-  }
+  // void increment() {
+  //   setState(() {
+  //     _counter++;
+  //   });
+  // }
 
   void _loadData() async {
     String URL = "https://api.github.com/orgs/raywenderlich/members";
@@ -59,11 +59,11 @@ class _MyCounterState extends State<MyCounter> {
     });
   }
 
-  toggleFav(Member member) {
-    setState(() {
-      // member.isFavorite = !member.isFavorite;
-    });
-  }
+  // toggleFav(Member member) {
+  //   setState(() {
+  //     // member.isFavorite = !member.isFavorite;
+  //   });
+  // }
 
   Widget _buildRow(int i) {
     return new Padding(
@@ -93,10 +93,10 @@ class _MyCounterState extends State<MyCounter> {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: AppBar(
-        title: Text("Counter app"),
+        title: Text("List app"),
       ),
       body: ListView.builder(
-          padding: const EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(12.0),
           shrinkWrap: true,
           itemCount: _members.length * 2,
           itemBuilder: (BuildContext context, int position) {
